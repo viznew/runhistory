@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --tech-accent: #00d4ff;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --dark-bg: #1a1a1a;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-light: #ecf0f1;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
+}
+
+/* Glass morphism effect */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.tech-accent {
+    color: var(--tech-accent) !important;
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--secondary-color), var(--tech-accent));
+    border: none;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, var(--success-color), #2ecc71);
+    border: none;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Progress bar styling */
+.progress {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, var(--secondary-color), var(--tech-accent));
+    transition: width 0.6s ease;
+}
+
+/* Step indicators */
+.step-indicator {
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step-indicator i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+    transition: color 0.3s ease;
+}
+
+.step-indicator span {
+    display: block;
+    font-weight: 600;
+    color: #7f8c8d;
+    transition: color 0.3s ease;
+}
+
+.step-indicator.active {
+    background: rgba(52, 152, 219, 0.2);
+    border: 2px solid var(--secondary-color);
+}
+
+.step-indicator.active i {
+    color: var(--secondary-color);
+    animation: pulse 2s infinite;
+}
+
+.step-indicator.active span {
+    color: var(--secondary-color);
+}
+
+.step-indicator.completed {
+    background: rgba(39, 174, 96, 0.2);
+    border: 2px solid var(--success-color);
+}
+
+.step-indicator.completed i {
+    color: var(--success-color);
+}
+
+.step-indicator.completed span {
+    color: var(--success-color);
+}
+
+/* Video preview */
+.video-preview {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: #000;
+}
+
+.video-preview video {
+    border-radius: 15px;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Spinner customization */
+.spinner-border.tech-accent {
+    color: var(--tech-accent);
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: var(--shadow);
+}
+
+.modal-header {
+    background: linear-gradient(45deg, var(--secondary-color), var(--tech-accent));
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* Asset items */
+.asset-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.asset-item h6 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.asset-item .btn {
+    margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .step-indicator {
+        margin: 0.25rem 0;
+        padding: 0.5rem;
+    }
+    
+    .step-indicator i {
+        font-size: 1.5rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-light);
+    }
+    
+    .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: var(--text-light);
+    }
+    
+    .form-control:focus {
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+/* Scanline effect overlay */
+.scanline-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.scanline-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        transparent 50%,
+        rgba(0, 212, 255, 0.03) 50%,
+        rgba(0, 212, 255, 0.03) 51%,
+        transparent 51%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Glitch effect for tech aesthetic */
+.glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(-1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+}
