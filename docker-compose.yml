@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  runhistory-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile.cloudrun
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - DEPLOYMENT_ENV=production
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./generated:/app/generated
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

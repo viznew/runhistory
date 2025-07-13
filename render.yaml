@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: runhistory-generator
+    env: python
+    buildCommand: pip install -e .
+    startCommand: python main.py
+    plan: free
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: DEPLOYMENT_ENV
+        value: production
+      - key: PORT
+        value: 8000
